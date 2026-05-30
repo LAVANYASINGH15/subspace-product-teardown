@@ -1,140 +1,145 @@
 # Subspace.money — Product Teardown
-**Product Intern Assignment · Vocallabs / Subspace · May 2026**
+### 5 Gaps I'd Fix From Day One
+
+**Lavanya Singh**
+B.Tech in Information Technology, 2022–2026
+Rajiv Gandhi Institute of Petroleum Technology, Jais
+30 May 2026
 
 ---
 
-## Company chosen: Subspace.money
+> *A product teardown based on real app usage and Play Store reviews — every gap comes with a ship plan.*
 
-> Subscribe to anything, delivered in minutes — Subscriptions · Sharing · Rentals
+---
 
-Subspace is India's subscription management and group finance platform. Bootstrapped, profitable, with ₹36.5 Cr ARR (FY25) and zero external funding. Core features include shared subscriptions, split billing, gift cards, rentals, and a Negotiate API for automated price negotiation.
+## Why Subspace
+
+Subspace.money is India's subscription management and group finance platform — bootstrapped, profitable, with ₹36.5 Cr ARR (FY25) and zero external funding. Core features include shared subscriptions, split billing, gift cards, rentals, and a Negotiate API for automated price negotiation.
+
+I chose Subspace because it has a live app with real users, real transactions, and real friction — which means real observations, not guesswork.
 
 ---
 
 ## Methodology
 
-- Used the live app and website as a real customer (Android + web)
-- Reviewed Play Store ratings and user complaints (as of May 2026)
-- Cross-referenced competitors: myPaisaa, MoneyClub (TMC), Rocket Money (US), Minna Technologies (EU)
-- Frameworks applied: SWOT, Porter's Five Forces, Jobs-to-be-Done lens on ICP gaps
+- Used the live Android app as a real customer (May 2026)
+- Reviewed Play Store ratings and 1-star reviews (App rated 3.5 stars)
+- Frameworks used: SWOT, Jobs-to-be-Done lens on ICP gaps, Impact vs Effort prioritisation
 
 ---
 
-## The 5 Feedbacks
+## The 5 Gaps
 
 ---
 
-### Feedback 01 — The homepage forces login before showing value
-
+### Gap 01 — New users hit a wall — no value shown before signup
 **Pillars:** GTM & ICPs · UX
 
-#### (a) Observed
-The homepage immediately prompts "Continue with WhatsApp" or a phone number. There is no hero copy explaining what Subspace does, no pricing, no social proof, and no browsable catalog before the signup gate. A visitor arriving via a friend's referral or a Google search sees a login wall before any context.
+#### What I Saw
+The very first screen is a WhatsApp login prompt or phone number field. No hero copy, no pricing, no catalog preview, no social proof — all before signing up. A user arriving from a friend's referral sees a login wall with nothing backing the claim.
 
-#### (b) Problem
-Word-of-mouth is Subspace's main growth lever. A new user told "check out Subspace for cheap Netflix" bounces when they hit a sign-up wall with no proof of the claim. Cold conversion rate from organic and referral traffic is structurally suppressed. The core ICP — cost-conscious urban 20–30s — needs to see ₹ savings before giving a phone number.
+> **Fig 1 — First screen on app open (May 2026)**
+> No value prop, no pricing, no catalog — login wall is the first thing a new user sees.
 
-#### (c) Ship instead
-Build a public browse layer: show live subscription prices (e.g. "Netflix Premium ₹149/mo — 4 slots open") without login. Gate only checkout. Add a single-line value prop above the CTA: *"India's cheapest streaming subscriptions — split & save up to 80%."* Measure impact on sign-up conversion rate within 2 weeks.
+#### The Opportunity
+Every referral Subspace earns is being partially wasted. The user already did the hard work of finding the app — but without seeing prices upfront, a meaningful % bounces before converting. This is the easiest conversion lift on the table: show the value before asking for the phone number.
+
+#### What I'd Ship
+Ship a public browse layer — live subscription prices, available slots, discount percentages — all visible without login. Gate only the checkout step. Add one line above the CTA: *"India's cheapest streaming subscriptions — split and save up to 80%."* This is a 1-sprint frontend change with a measurable impact on sign-up conversion in 2 weeks.
 
 ---
 
-### Feedback 02 — Shared subscription trust breaks at the admin layer
+### Gap 02 — Users are losing real money — and there's no button to fix it
+**Pillars:** Features / Services · UX · Customer Trust
 
+#### What I Saw
+No "protected by Subspace" badge, no dispute button, no refund policy anywhere on the plan detail screen. Play Store reviews (May 2026, 3.5 stars) show a consistent pattern: admins logging users out, subscriptions never activating, refunds not processing for months.
+
+> **Fig 2 — Play Store reviews, 1-star (Feb 2026)**
+> Rohith: admin removed him from a group after he left a 1-star rating. Swadhin: paid for Amazon Prime, admin logged him out, no refund issued. No in-app dispute option exists — users have no recourse.
+
+#### The Opportunity
+Shared subscriptions are the core product — but each transaction is a P2P trust exchange with no safety net. Users who get burned leave 1-star reviews that become the first thing a new user sees. A 3.5-star rating is a growth ceiling — it is structurally impossible to scale word-of-mouth when the word being spread is "I lost money."
+
+#### What I'd Ship
+Ship "Subspace-Verified Slots": Subspace holds admin credentials in an encrypted vault so joiners never depend on admin goodwill. Add a visible 7-day refund SLA on every plan card. Put a one-tap dispute button on the active subscription screen. Surface a "Protected by Subspace" trust badge at checkout. This converts the biggest churn driver into the biggest trust signal.
+
+---
+
+### Gap 03 — The catalog is 100% consumer — an entire segment is being ignored
+**Pillars:** GTM & ICPs · Features / Services
+
+#### What I Saw
+Browsing the full catalog reveals only consumer OTT and lifestyle apps — Netflix, Spotify, Canva, JioHotstar, Swiggy One. No Teams section, no business plan pricing, no way for a founder or small team to manage shared SaaS tools. The Negotiate API is mentioned nowhere in the app.
+
+> **Fig 3 — Shared Subscriptions catalog (May 2026)**
+> Every listing is a consumer OTT or lifestyle app. No Teams plan, no business tier, no SaaS tools for small teams anywhere in the catalog.
+
+#### The Opportunity
+India has millions of bootstrapped startups where one person pays for 10–15 SaaS tools, often sharing logins informally across the team. This is exactly what Subspace already solves for consumers — but nobody has built it for small teams. The Negotiate API already exists. The infra is there. The gap is just a product surface and a different ICP.
+
+#### What I'd Ship
+Launch "Subspace for Teams" — a lightweight workspace dashboard where a team admin adds a card, Subspace auto-detects recurring SaaS spend, and one-click negotiates or cancels. Price at ₹999/mo per workspace. Target bootstrapped founders in Bangalore and Hyderabad first. This is a 3-month MVP on existing infrastructure that opens an entirely new ARR stream.
+
+---
+
+### Gap 04 — Rentals asks for my location but won't tell me what's available
 **Pillars:** Features / Services · UX
 
-#### (a) Observed
-Google Play reviews (as recent as April 2026) show a recurring pattern: *"admin never replied," "he logged me out of Amazon Prime," "subscription doesn't refund the amount."* The app requires the admin (sharer) to manually provide credentials. If they log out the joiner, the joiner loses money with no visible recourse in the UI.
+#### What I Saw
+Tapping into Rentals immediately shows a "Change Location" popup — but after setting a location, there is no city coverage map, no catalog of available devices, no condition grading (A/B/C), and no damage protection policy visible. The Play Store listing promises "10-minute delivery" but the app gives no clarity on which cities this is live in.
 
-#### (b) Problem
-This is an existential trust issue. Subspace's core moat is its network of shared subscriptions — but each transaction is a P2P faith exchange. Even a small percentage of bad actors poisons word-of-mouth. India already has UPI-fraud anxiety; a product touching recurring money with no visible protection layer will struggle to scale beyond early adopters.
+> **Fig 4 — Rentals section, first screen (May 2026)**
+> Immediately asks for location — but after setting it, no city coverage map, no device catalog, no condition grades, no damage policy appears. The feature exists but gives users nothing to trust.
 
-#### (c) Ship instead
-Introduce **"Subspace-Verified Slots"**: Subspace holds admin credentials in an encrypted vault (similar to how RentMojo handles device handoff). Joiners never depend on admin goodwill. Add a 7-day no-questions refund SLA, surfaced prominently at checkout. Display a "protected by Subspace" badge with a one-tap dispute button in the active subscription card.
+#### The Opportunity
+Rentals involves handing someone a ₹80,000 MacBook. That needs more trust signals than a Netflix subscription — not fewer. When users can't find out whether their city is covered, what condition the device is in, or what happens if something breaks, they don't take the risk.
 
----
-
-### Feedback 03 — GTM is stuck in B2C streaming; the real white space is SMB expense management
-
-**Pillars:** GTM & ICPs · Competitor Analysis
-
-#### (a) Observed
-All marketing, app copy, and the visible catalog target individual consumers (Netflix, Spotify, Canva). There is no dedicated SMB onboarding, team billing, or business-plan pricing on the website. The "Negotiate API" is buried in product descriptions with no developer docs or business-facing landing page.
-
-#### (b) Problem
-India has ~63M SMBs. Startups and agencies routinely subscribe to 10–30 SaaS tools (Canva, Notion, Figma, Zoom, Adobe, Slack) and overspend because no one manages it centrally. Rocket Money found this moat in the US; Minna Technologies embedded it into European banking. Subspace is the only India-native player with the data and negotiate infrastructure — and is ignoring this segment entirely, leaving the door open for competitors.
-
-#### (c) Ship instead
-Launch **"Subspace for Teams"** — a lightweight B2B dashboard where a team admin adds cards, auto-detects recurring SaaS spend, and one-click negotiates or cancels. Price at ₹999/mo per workspace. Target ICP: bootstrapped startups and agency founders in Bangalore and Hyderabad. Distribution: partner with Razorpay and Zoho ecosystem, where these SMBs already live. Near-zero additional infra cost — the Negotiate API already exists.
+#### What I'd Ship
+Build a proper rentals landing experience: a live city coverage map, device listings with A/B/C condition grades and real photos, an explicit "damage covered up to ₹X" policy shown before checkout, and a real delivery ETA counter. If only Bangalore is live, say so clearly — specificity builds more trust than vague promises of "10-minute delivery."
 
 ---
 
-### Feedback 04 — Rentals is a product pivot buried as a feature
+### Gap 05 — Angry users are Subspace's biggest growth problem — and it's fixable
+**Pillars:** GTM & ICPs · Features · Growth
 
-**Pillars:** Features / Services · UX
+#### What I Saw
+3.5 stars on Play Store with a consistent stream of 1-star reviews through May 2026. Complaints cluster around three issues: admins unresponsive, subscriptions not activating after payment, refunds not processing for weeks. The founder is personally responding to reviews with a phone number — which shows awareness, but the fix is being handled outside the product.
 
-#### (a) Observed
-The Play Store listing leads with "Rent gadgets & accessories with 10-minute delivery (select cities)." But on the website and in-app, there is no prominent city list, no rental catalog preview, no device condition grading, no damage protection copy, and no clarity on which cities are actually live. The feature reads as aspirational, not operational.
+> **Fig 5 — Play Store reviews, 1-star (Nov 2025 – Apr 2026)**
+> Utsav: randomly logged out, group owner slow to resolve. Anurag: wallet balance negative after 11 months, unresolved by support. Same 2–3 complaints repeating across months — not isolated incidents, a systemic pattern. App rated 3.5 stars.
 
-#### (b) Problem
-Rentals is a high-trust transaction — a user is renting someone's ₹80,000 MacBook. Without city coverage transparency, condition grades, and damage protection copy, users will not take the leap. Worse, the vagueness makes the core subscription product look less credible: if Subspace over-promises on rentals, users wonder what else is vaporware.
+#### The Opportunity
+Subspace's entire growth engine runs on referrals and word-of-mouth. But a 3.5-star app with visible refund complaints is actively working against that engine. The good news: these are not random complaints — they are the same 2–3 fixable problems appearing over and over. Fix them once, fix the rating permanently.
 
-#### (c) Ship instead
-Build a dedicated rentals landing page with: (a) a live city map showing coverage, (b) catalog with item condition grades (A/B/C) and real photos, (c) explicit "damage covered up to ₹X" policy, (d) real delivery time counter. If only Bangalore is live, say so — specificity builds trust. Alternatively, move rentals to a waitlist page and keep the homepage focused on subscriptions until rentals has density in at least 3 cities.
-
----
-
-### Feedback 05 — Unused fintech distribution: BNPL and UPI apps are the natural acquisition channel
-
-**Pillars:** Potential Collaborations · GTM
-
-#### (a) Observed
-Subspace is not present on any major fintech super-app (CRED, PhonePe, Paytm, Jupiter, Fi). There is no co-marketing with any BNPL provider. The only visible distribution channel is organic app-store discovery and direct referral. Competitor MoneyClub (TMC) is building group finance on similar social graphs with external funding.
-
-#### (b) Problem
-Subspace's core user — urban, digitally-active, subscription-aware — is already inside CRED, PhonePe, or a neobank. Acquiring them via a separate app install has high friction and CAC. Meanwhile, CRED already surfaces subscription data from linked cards — a direct feature-level threat. Without a distribution deal, Subspace risks being replicated as a feature inside a super-app before it reaches critical mass.
-
-#### (c) Ship instead
-Prioritise one embedded integration: pitch CRED or PhonePe for a **"Subscription Wallet" widget** — Subspace powers the backend (catalog, negotiate, split), the super-app provides distribution. Revenue share on transactions. Simultaneously, approach LazyPay or Simpl for a "subscribe now, pay later" product for annual subscriptions — converts fence-sitters who balk at upfront annual prices.
+#### What I'd Ship
+Make dispute resolution a product feature, not a WhatsApp call. Add an in-app "Something went wrong" button on every active subscription card that opens a structured dispute flow with a 48-hour SLA. Show a live status tracker so users feel heard without needing to call anyone. When resolved, prompt a review update. A 4.2+ rating unlocks a different quality of word-of-mouth — and the fix is already 80% done through Gap 02.
 
 ---
 
-## Framework Analysis
-
-### SWOT
+## SWOT Snapshot
 
 | | |
 |---|---|
-| **Strengths** | ₹36.5 Cr ARR, zero external funding — rare capital efficiency. Negotiate API is a genuine technical moat. Network effects: each group sharer attracts 3–4 joiners. India-first catalog tuned to UPI, OTT pricing, and local providers. |
-| **Weaknesses** | Trust deficit at admin layer (evidenced by Play Store reviews). Login-gated homepage suppresses cold conversion. No SMB / B2B product despite having the right infrastructure. Rentals expansion lacks clarity on cities, coverage, and catalog. |
-| **Opportunities** | 63M Indian SMBs with unmanaged SaaS spend. BNPL + annual subscription bundling (untapped). Super-app embedding (CRED, PhonePe) for low-CAC distribution. Expansion beyond OTT into utility and local subscriptions. |
-| **Threats** | CRED / PhonePe can replicate subscription tracking as a native feature. MoneyClub (TMC) raising funds in the same space. Platform risk: Netflix cracking down on credential sharing. UPI mandate anxiety reducing willingness to link cards. |
+| **Strengths** | ₹36.5 Cr ARR, zero external funding. Negotiate API is a genuine technical moat. Network effects: each sharer brings 3–4 joiners. India-first catalog, UPI-native. |
+| **Weaknesses** | Admin trust gap — no escrow or protection layer. Login wall kills cold conversion. No SMB/Teams product despite having the infra. Rentals lacks city coverage and trust signals. |
+| **Opportunities** | Millions of Indian SMBs with unmanaged SaaS spend. BNPL bundling for annual subscriptions. Super-app partnerships for low-CAC distribution. Expand beyond OTT to utilities and local subscriptions. |
+| **Risks** | 3.5 stars — trust erosion is a growth ceiling. Platform risk: Netflix cracking down on sharing. Super-apps could replicate subscription tracking as a native feature. Word-of-mouth breaks when users are angry. |
 
 ---
 
-### Porter's Five Forces
+## What I'd Prioritise on Day 1
 
-| Force | Rating | Notes |
-|---|---|---|
-| Competitive rivalry | Medium | MoneyClub, myPaisaa are small; CRED is the latent threat |
-| Threat of new entrants | Medium-High | Low moat without the credential vault and data flywheel |
-| Supplier power | Very High | Netflix/Spotify can unilaterally end sharing — platform dependency is critical |
-| Buyer power | Low-Medium | Low switching cost; users leave if savings dry up |
-| Substitutes | Medium | WhatsApp groups for informal splitting are the real substitute |
-
----
-
-## Prioritisation
-
-| Priority | Feedback | Impact | Effort | Rationale |
+| Priority | Ship This | Impact | Effort | Why First |
 |---|---|---|---|---|
-| 1 | Admin trust / credential vault | High | Medium | Retention-blocking; single bad review kills the referral loop |
-| 2 | Public browse before login | High | Low | One-week frontend change; directly lifts cold conversion |
-| 3 | Subspace for Teams (SMB) | High | High | New ARR stream on existing infra; 3-month MVP |
-| 4 | CRED / PhonePe distribution deal | High | High | Moat against super-app substitution; run parallel to #3 |
-| 5 | Rentals transparency | Medium | Low | Credibility fix before next growth push on rentals |
+| 1 | Fix the admin trust layer — credential vault + dispute button | High | Medium | Users lose real money. One bad week kills the referral loop. |
+| 2 | Public browse before login — show value before asking for a number | High | Low | 1 sprint. Directly unblocks cold conversion. |
+| 3 | Subspace for Teams — lightweight SMB dashboard | High | High | New ARR on existing infra. 3-month MVP. |
+| 4 | Rentals transparency — city map, condition grades, damage policy | Medium | Low | Credibility fix before the next rentals push. |
+| 5 | Turn angry reviews into a retention loop — in-app dispute + refund SLA | High | Medium | 3.5 stars is a ceiling. Fix trust, fix referrals. |
 
 ---
 
-*Frameworks used: SWOT · Porter's Five Forces · Jobs-to-be-Done lens on ICP gaps*  
-*Submitted by: [Your Name] · Product Intern Assignment · Vocallabs / Subspace · May 2026*
+*All observations from direct app usage and Play Store reviews, May 2026*
+*Frameworks: SWOT · Jobs-to-be-Done · Impact vs Effort prioritisation*
+*Product Intern Assignment · Vocallabs / Subspace · May 2026*
