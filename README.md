@@ -36,10 +36,13 @@ I chose Subspace because it has a live app with real users, real transactions, a
 **Pillars:** GTM & ICPs · UX
 
 #### What I Saw
-The very first screen is a WhatsApp login prompt or phone number field. No hero copy, no pricing, no catalog preview, no social proof — all before signing up. A user arriving from a friend's referral sees a login wall with nothing backing the claim.
+
+<img src="fig1.jpeg" width="250" alt="Fig 1 - Login wall"/>
 
 > **Fig 1 — First screen on app open (May 2026)**
 > No value prop, no pricing, no catalog — login wall is the first thing a new user sees.
+
+The very first screen is a WhatsApp login prompt or phone number field. No hero copy, no pricing, no catalog preview, no social proof — all before signing up. A user arriving from a friend's referral sees a login wall with nothing backing the claim.
 
 #### The Opportunity
 Every referral Subspace earns is being partially wasted. The user already did the hard work of finding the app — but without seeing prices upfront, a meaningful % bounces before converting. This is the easiest conversion lift on the table: show the value before asking for the phone number.
@@ -53,10 +56,13 @@ Ship a public browse layer — live subscription prices, available slots, discou
 **Pillars:** Features / Services · UX · Customer Trust
 
 #### What I Saw
-No "protected by Subspace" badge, no dispute button, no refund policy anywhere on the plan detail screen. Play Store reviews (May 2026, 3.5 stars) show a consistent pattern: admins logging users out, subscriptions never activating, refunds not processing for months.
+
+<img src="fig2.jpeg" width="250" alt="Fig 2 - Play Store reviews"/>
 
 > **Fig 2 — Play Store reviews, 1-star (Feb 2026)**
 > Rohith: admin removed him from a group after he left a 1-star rating. Swadhin: paid for Amazon Prime, admin logged him out, no refund issued. No in-app dispute option exists — users have no recourse.
+
+No "protected by Subspace" badge, no dispute button, no refund policy anywhere on the plan detail screen. Play Store reviews (May 2026, 3.5 stars) show a consistent pattern: admins logging users out, subscriptions never activating, refunds not processing for months.
 
 #### The Opportunity
 Shared subscriptions are the core product — but each transaction is a P2P trust exchange with no safety net. Users who get burned leave 1-star reviews that become the first thing a new user sees. A 3.5-star rating is a growth ceiling — it is structurally impossible to scale word-of-mouth when the word being spread is "I lost money."
@@ -70,10 +76,13 @@ Ship "Subspace-Verified Slots": Subspace holds admin credentials in an encrypted
 **Pillars:** GTM & ICPs · Features / Services
 
 #### What I Saw
-Browsing the full catalog reveals only consumer OTT and lifestyle apps — Netflix, Spotify, Canva, JioHotstar, Swiggy One. No Teams section, no business plan pricing, no way for a founder or small team to manage shared SaaS tools. The Negotiate API is mentioned nowhere in the app.
+
+<img src="fig3.jpeg" width="250" alt="Fig 3 - Subscription catalog"/>
 
 > **Fig 3 — Shared Subscriptions catalog (May 2026)**
 > Every listing is a consumer OTT or lifestyle app. No Teams plan, no business tier, no SaaS tools for small teams anywhere in the catalog.
+
+Browsing the full catalog reveals only consumer OTT and lifestyle apps — Netflix, Spotify, Canva, JioHotstar, Swiggy One. No Teams section, no business plan pricing, no way for a founder or small team to manage shared SaaS tools. The Negotiate API is mentioned nowhere in the app.
 
 #### The Opportunity
 India has millions of bootstrapped startups where one person pays for 10–15 SaaS tools, often sharing logins informally across the team. This is exactly what Subspace already solves for consumers — but nobody has built it for small teams. The Negotiate API already exists. The infra is there. The gap is just a product surface and a different ICP.
@@ -87,10 +96,13 @@ Launch "Subspace for Teams" — a lightweight workspace dashboard where a team a
 **Pillars:** Features / Services · UX
 
 #### What I Saw
-Tapping into Rentals immediately shows a "Change Location" popup — but after setting a location, there is no city coverage map, no catalog of available devices, no condition grading (A/B/C), and no damage protection policy visible. The Play Store listing promises "10-minute delivery" but the app gives no clarity on which cities this is live in.
+
+<img src="fig4.jpeg" width="250" alt="Fig 4 - Rentals location popup"/>
 
 > **Fig 4 — Rentals section, first screen (May 2026)**
 > Immediately asks for location — but after setting it, no city coverage map, no device catalog, no condition grades, no damage policy appears. The feature exists but gives users nothing to trust.
+
+Tapping into Rentals immediately shows a "Change Location" popup — but after setting a location, there is no city coverage map, no catalog of available devices, no condition grading (A/B/C), and no damage protection policy visible. The Play Store listing promises "10-minute delivery" but the app gives no clarity on which cities this is live in.
 
 #### The Opportunity
 Rentals involves handing someone a ₹80,000 MacBook. That needs more trust signals than a Netflix subscription — not fewer. When users can't find out whether their city is covered, what condition the device is in, or what happens if something breaks, they don't take the risk.
@@ -104,10 +116,13 @@ Build a proper rentals landing experience: a live city coverage map, device list
 **Pillars:** GTM & ICPs · Features · Growth
 
 #### What I Saw
-3.5 stars on Play Store with a consistent stream of 1-star reviews through May 2026. Complaints cluster around three issues: admins unresponsive, subscriptions not activating after payment, refunds not processing for weeks. The founder is personally responding to reviews with a phone number — which shows awareness, but the fix is being handled outside the product.
+
+<img src="fig5.jpeg" width="250" alt="Fig 5 - Play Store reviews pattern"/>
 
 > **Fig 5 — Play Store reviews, 1-star (Nov 2025 – Apr 2026)**
 > Utsav: randomly logged out, group owner slow to resolve. Anurag: wallet balance negative after 11 months, unresolved by support. Same 2–3 complaints repeating across months — not isolated incidents, a systemic pattern. App rated 3.5 stars.
+
+3.5 stars on Play Store with a consistent stream of 1-star reviews through May 2026. Complaints cluster around three issues: admins unresponsive, subscriptions not activating after payment, refunds not processing for weeks. The founder is personally responding to reviews with a phone number — which shows awareness, but the fix is being handled outside the product.
 
 #### The Opportunity
 Subspace's entire growth engine runs on referrals and word-of-mouth. But a 3.5-star app with visible refund complaints is actively working against that engine. The good news: these are not random complaints — they are the same 2–3 fixable problems appearing over and over. Fix them once, fix the rating permanently.
