@@ -10,7 +10,8 @@ B.Tech in Information Technology, 2022–2026
 
 Rajiv Gandhi Institute of Petroleum Technology, Jais
 
-30 May 2026
+30 May, 2026
+
 ---
 
 > *A product teardown based on real app usage and Play Store reviews — every gap comes with a ship plan.*
