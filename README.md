@@ -41,7 +41,7 @@ I chose Subspace because it has a live app with real users, real transactions, a
 ### Gap 01 — New users hit a wall — no value shown before signup
 **Pillars:** GTM & ICPs · UX
 
-#### What I Saw
+#### Observed
 
 <img src="fig1.jpeg" width="250" alt="Fig 1 - Login wall"/>
 
@@ -50,10 +50,10 @@ I chose Subspace because it has a live app with real users, real transactions, a
 
 The very first screen is a WhatsApp login prompt or phone number field. No hero copy, no pricing, no catalog preview, no social proof — all before signing up. A user arriving from a friend's referral sees a login wall with nothing backing the claim.
 
-#### The Opportunity
+#### Problem
 Every referral Subspace earns is being partially wasted. The user already did the hard work of finding the app — but without seeing prices upfront, a meaningful % bounces before converting. This is the easiest conversion lift on the table: show the value before asking for the phone number.
 
-#### What I'd Ship
+#### Ship instead
 Ship a public browse layer — live subscription prices, available slots, discount percentages — all visible without login. Gate only the checkout step. Add one line above the CTA: *"India's cheapest streaming subscriptions — split and save up to 80%."* This is a 1-sprint frontend change with a measurable impact on sign-up conversion in 2 weeks.
 
 ---
@@ -61,7 +61,7 @@ Ship a public browse layer — live subscription prices, available slots, discou
 ### Gap 02 — Users are losing real money — and there's no button to fix it
 **Pillars:** Features / Services · UX · Customer Trust
 
-#### What I Saw
+#### Observed
 
 <img src="fig2.jpeg" width="250" alt="Fig 2 - Play Store reviews"/>
 
@@ -70,10 +70,10 @@ Ship a public browse layer — live subscription prices, available slots, discou
 
 No "protected by Subspace" badge, no dispute button, no refund policy anywhere on the plan detail screen. Play Store reviews (May 2026, 3.5 stars) show a consistent pattern: admins logging users out, subscriptions never activating, refunds not processing for months.
 
-#### The Opportunity
+#### Problem
 Shared subscriptions are the core product — but each transaction is a P2P trust exchange with no safety net. Users who get burned leave 1-star reviews that become the first thing a new user sees. A 3.5-star rating is a growth ceiling — it is structurally impossible to scale word-of-mouth when the word being spread is "I lost money."
 
-#### What I'd Ship
+#### Ship Instead
 Ship "Subspace-Verified Slots": Subspace holds admin credentials in an encrypted vault so joiners never depend on admin goodwill. Add a visible 7-day refund SLA on every plan card. Put a one-tap dispute button on the active subscription screen. Surface a "Protected by Subspace" trust badge at checkout. This converts the biggest churn driver into the biggest trust signal.
 
 ---
@@ -81,7 +81,7 @@ Ship "Subspace-Verified Slots": Subspace holds admin credentials in an encrypted
 ### Gap 03 — The catalog is 100% consumer — an entire segment is being ignored
 **Pillars:** GTM & ICPs · Features / Services
 
-#### What I Saw
+#### Observed
 
 <img src="fig3.jpeg" width="250" alt="Fig 3 - Subscription catalog"/>
 
@@ -90,10 +90,10 @@ Ship "Subspace-Verified Slots": Subspace holds admin credentials in an encrypted
 
 Browsing the full catalog reveals only consumer OTT and lifestyle apps — Netflix, Spotify, Canva, JioHotstar, Swiggy One. No Teams section, no business plan pricing, no way for a founder or small team to manage shared SaaS tools. The Negotiate API is mentioned nowhere in the app.
 
-#### The Opportunity
+#### Problem
 India has millions of bootstrapped startups where one person pays for 10–15 SaaS tools, often sharing logins informally across the team. This is exactly what Subspace already solves for consumers — but nobody has built it for small teams. The Negotiate API already exists. The infra is there. The gap is just a product surface and a different ICP.
 
-#### What I'd Ship
+#### Ship instead
 Launch "Subspace for Teams" — a lightweight workspace dashboard where a team admin adds a card, Subspace auto-detects recurring SaaS spend, and one-click negotiates or cancels. Price at ₹999/mo per workspace. Target bootstrapped founders in Bangalore and Hyderabad first. This is a 3-month MVP on existing infrastructure that opens an entirely new ARR stream.
 
 ---
@@ -101,7 +101,7 @@ Launch "Subspace for Teams" — a lightweight workspace dashboard where a team a
 ### Gap 04 — Rentals asks for my location but won't tell me what's available
 **Pillars:** Features / Services · UX
 
-#### What I Saw
+#### Oberved 
 
 <img src="fig4.jpeg" width="250" alt="Fig 4 - Rentals location popup"/>
 
@@ -110,10 +110,10 @@ Launch "Subspace for Teams" — a lightweight workspace dashboard where a team a
 
 Tapping into Rentals immediately shows a "Change Location" popup — but after setting a location, there is no city coverage map, no catalog of available devices, no condition grading (A/B/C), and no damage protection policy visible. The Play Store listing promises "10-minute delivery" but the app gives no clarity on which cities this is live in.
 
-#### The Opportunity
+#### Problem
 Rentals involves handing someone a ₹80,000 MacBook. That needs more trust signals than a Netflix subscription — not fewer. When users can't find out whether their city is covered, what condition the device is in, or what happens if something breaks, they don't take the risk.
 
-#### What I'd Ship
+#### Ship instead
 Build a proper rentals landing experience: a live city coverage map, device listings with A/B/C condition grades and real photos, an explicit "damage covered up to ₹X" policy shown before checkout, and a real delivery ETA counter. If only Bangalore is live, say so clearly — specificity builds more trust than vague promises of "10-minute delivery."
 
 ---
@@ -121,7 +121,7 @@ Build a proper rentals landing experience: a live city coverage map, device list
 ### Gap 05 — Angry users are Subspace's biggest growth problem — and it's fixable
 **Pillars:** GTM & ICPs · Features · Growth
 
-#### What I Saw
+#### Observed
 
 <img src="fig5.jpeg" width="250" alt="Fig 5 - Play Store reviews pattern"/>
 
@@ -130,10 +130,10 @@ Build a proper rentals landing experience: a live city coverage map, device list
 
 3.5 stars on Play Store with a consistent stream of 1-star reviews through May 2026. Complaints cluster around three issues: admins unresponsive, subscriptions not activating after payment, refunds not processing for weeks. The founder is personally responding to reviews with a phone number — which shows awareness, but the fix is being handled outside the product.
 
-#### The Opportunity
+#### Problem
 Subspace's entire growth engine runs on referrals and word-of-mouth. But a 3.5-star app with visible refund complaints is actively working against that engine. The good news: these are not random complaints — they are the same 2–3 fixable problems appearing over and over. Fix them once, fix the rating permanently.
 
-#### What I'd Ship
+#### Ship instead
 Make dispute resolution a product feature, not a WhatsApp call. Add an in-app "Something went wrong" button on every active subscription card that opens a structured dispute flow with a 48-hour SLA. Show a live status tracker so users feel heard without needing to call anyone. When resolved, prompt a review update. A 4.2+ rating unlocks a different quality of word-of-mouth — and the fix is already 80% done through Gap 02.
 
 ---
