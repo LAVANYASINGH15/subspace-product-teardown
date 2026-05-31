@@ -1,6 +1,6 @@
 # Subspace.money — Product Teardown
 
-### 5 Gaps I'd Fix From Day One
+## 5 Gaps I'd Fix From Day One
 
 ---
 
